@@ -1,0 +1,79 @@
+{
+  "typescript react-native View component without props": {
+    "scope": "javascriptreact,typescriptreact",
+    "prefix": ["vfc"],
+    "body": [
+      "import { View, StyleSheet } from 'react-native'",
+      "\n",
+      "const $TM_FILENAME_BASE = () => {$0}",
+      "\n",
+      "const styles = StyleSheet.create({});",
+      "\n",
+      "export default $TM_FILENAME_BASE"
+    ],
+    "description": "typescript react component without props"
+  },
+  "typescript react-native View component with props": {
+    "scope": "javascriptreact,typescriptreact",
+    "prefix": ["vfcp"],
+    "body": [
+      "import { View, StyleSheet } from 'react-native'",
+      "\n",
+      "interface ${TM_FILENAME_BASE}Props {$0}",
+      "\n",
+      "const $TM_FILENAME_BASE = ({}: ${TM_FILENAME_BASE}Props) => {}",
+      "\n",
+      "const styles = StyleSheet.create({});",
+      "\n",
+      "export default $TM_FILENAME_BASE"
+    ],
+    "description": "typescript react component with props"
+  },
+  "typescript react-native Screen component with props": {
+    "scope": "javascriptreact,typescriptreact",
+    "prefix": ["vfcps"],
+    "body": [
+      "import { View, StyleSheet } from 'react-native'",
+      "\n",
+      "import { useColorScheme } from '@laftel-team/pudding-native'",
+      "\n",
+      "interface ${TM_FILENAME_BASE}Props {$0}",
+      "\n",
+      "const $TM_FILENAME_BASE = ({}: ${TM_FILENAME_BASE}Props) => {",
+      "\n",
+      "const { color: themeColor } = useColorScheme()",
+      "\n",
+      "return <View style={{ flex: 1, backgroundColor: themeColor.background1 }} />",
+      "\n",
+      "}",
+      "const styles = StyleSheet.create({});",
+      "\n",
+      "export default $TM_FILENAME_BASE"
+    ],
+    "description": "typescript react component with props"
+  },
+  "props interface type": {
+    "scope": "typescriptreact",
+    "prefix": ["pt"],
+    "body": ["interface ${TM_FILENAME_BASE}Props {$0}", "\n"],
+    "description": "props interface"
+  },
+  "useCallback": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": "ucb",
+    "body": ["useCallback(() => {", "\t$0", "}, []);"],
+    "description": "useCallback"
+  },
+  "useMemo": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": "umm",
+    "body": ["useMemo(() => {", "\t$0", "}, []);"],
+    "description": "useMemo"
+  },
+  "useEffect": {
+    "scope": "typescriptreact,javascriptreact",
+    "prefix": "uef",
+    "body": ["useEffect(() => {", "\t$0", "}, []);"],
+    "description": "useEffect"
+  }
+}
