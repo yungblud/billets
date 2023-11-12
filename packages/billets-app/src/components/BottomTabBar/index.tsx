@@ -1,15 +1,22 @@
-import colors from '@app/lib/colors';
-import {memo} from 'react';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {SvgProps} from 'react-native-svg';
 import React from 'react';
+import colors from '@app/lib/colors';
 import styled from '@emotion/native';
+import {FC, PropsWithChildren} from 'react';
+import {SvgProps} from 'react-native-svg';
+import {useBottomTabBarIconFillColor} from './hooks';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
-const useBottomTabBarIconFillColor = ({isFocused}: {isFocused: boolean}) => {
-  const focusedColor = '#ffffff';
-  const unfocusedColor = 'rgb(188, 188, 188)';
-  const iconFillColor = isFocused ? focusedColor : unfocusedColor;
-  return iconFillColor;
+export const BottomTabBar: {
+  Container: FC<PropsWithChildren<{}>>;
+  Item: FC<BottomTabBarItemProps>;
+} = () => null;
+
+BottomTabBar.Container = ({children}: PropsWithChildren<{}>) => {
+  return (
+    <Wrapper>
+      <InnerWrapper>{children}</InnerWrapper>
+    </Wrapper>
+  );
 };
 
 interface BottomTabBarItemProps {
@@ -22,14 +29,16 @@ interface BottomTabBarItemProps {
   onLongPress?: () => void;
 }
 
-const BottomTabBarItem = ({
+BottomTabBar.Item = ({
   title,
   isFocused,
   IconComponent,
   onPress,
   onLongPress,
-}: BottomTabBarItemProps) => {
+}) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const color = useBottomTabBarIconFillColor({isFocused});
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const {bottom: bottomInset} = useSafeAreaInsets();
   return (
     <TabBarItem
@@ -50,6 +59,15 @@ const BottomTabBarItem = ({
   );
 };
 
+const Wrapper = styled.View`
+  border-top-color: ${colors.gray.light};
+  broder-top-width: 1px;
+`;
+
+const InnerWrapper = styled.View`
+  flex-direction: row;
+`;
+
 const TabBarItem = styled.TouchableOpacity`
   flex: 1;
   align-items: center;
@@ -63,5 +81,3 @@ const TabBarLabel = styled.Text`
   font-size: 12px;
   margin-top: 8px;
 `;
-
-export default memo(BottomTabBarItem);
