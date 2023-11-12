@@ -6,7 +6,7 @@ import React, {useCallback} from 'react';
 import HomeStackNavigation from '../HomeStackNavigation/HomeStackNavigation';
 import SearchStackNavigation from '../SearchStackNavigation/SearchStackNavigation';
 import {MainTabParamList} from './types';
-import BottomTabBar from '../../components/atoms/BottomTabBar';
+import BottomTabBar from '../../components/BottomTabBar';
 import {Platform} from 'react-native';
 import SettingStackNavigation from '../SettingStackNavigation/SettingStackNavigation';
 
