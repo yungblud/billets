@@ -6,6 +6,7 @@ import SearchIcon from '@app/components/icons/SearchIcon';
 import HomeIcon from '@app/components/icons/HomeIcon';
 import GenieIcon from '@app/components/icons/GenieIcon';
 import BottomTabBarItem from './BottomTabBarItem';
+import colors from '@app/lib/colors';
 
 const switchTitle = (route: string) => {
   switch (route) {
@@ -78,7 +79,7 @@ const BottomTabBar = ({state, navigation}: Props) => {
 };
 
 const Wrapper = styled.View`
-  border-top-color: colors.gray.light;
+  border-top-color: ${colors.gray.light};
   broder-top-width: 1px;
 `;
 
