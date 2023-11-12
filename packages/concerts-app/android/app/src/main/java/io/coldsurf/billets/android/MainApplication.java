@@ -1,4 +1,4 @@
-package com.concertsapp;
+package io.coldsurf.billets.android;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

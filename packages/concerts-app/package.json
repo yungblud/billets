@@ -1,5 +1,5 @@
 {
-  "name": "@concerts/concerts-app",
+  "name": "billets",
   "version": "0.0.1",
   "private": true,
   "scripts": {

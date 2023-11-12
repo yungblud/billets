@@ -73,9 +73,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.concertsapp"
+    namespace "io.coldsurf.billets.android"
     defaultConfig {
-        applicationId "com.concertsapp"
+        applicationId "io.coldsurf.billets.android"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
