@@ -1,5 +1,5 @@
 {
-  "name": "@concerts/concerts-kit",
+  "name": "@billets/billets-kit",
   "version": "1.0.0",
   "main": "dist/core.js",
   "files": [
