@@ -3,7 +3,7 @@ import {FlatList, Text, TouchableOpacity, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import colors from '../../lib/colors';
 import {useSettingScreenNavigation} from './hooks';
-import styled from '@emotion/native';
+import styled, {css} from '@emotion/native';
 
 interface SettingScreenProps {}
 
@@ -11,7 +11,11 @@ const SettingScreen = ({}: SettingScreenProps) => {
   const {top: topInset} = useSafeAreaInsets();
   const navigation = useSettingScreenNavigation();
   return (
-    <View style={{flex: 1, backgroundColor: colors.gray.base}}>
+    <View
+      style={css`
+        flex: 1;
+        background-color: ${colors.gray.base};
+      `}>
       <LoginTop
         onPress={() => {
           navigation.navigate('AuthStack', {
@@ -22,7 +26,13 @@ const SettingScreen = ({}: SettingScreenProps) => {
         topInset={topInset}>
         <LoginTopInner>
           <LoginText>로그인</LoginText>
-          <Text style={{marginLeft: 'auto', fontSize: 24}}>👉</Text>
+          <Text
+            style={css`
+              margin-left: auto;
+              font-size: 24;
+            `}>
+            👉
+          </Text>
         </LoginTopInner>
       </LoginTop>
       <SettingWrapper>
@@ -36,31 +46,31 @@ const SettingScreen = ({}: SettingScreenProps) => {
           renderItem={info => {
             return (
               <TouchableOpacity
-                style={{
-                  paddingVertical: 24,
-                  backgroundColor: colors.gray.base,
-                  paddingHorizontal: 24,
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                }}>
+                style={css`
+                  padding-vertical: 24;
+                  background-color: ${colors.gray.base};
+                  padding-horizontal: 24;
+                  flex-direction: row;
+                  align-items: center;
+                `}>
                 <Text
-                  style={{
-                    color: colors.white.base,
-                    fontSize: 16,
-                    fontWeight: '500',
-                  }}>
+                  style={css`
+                    color: ${colors.white.base};
+                    font-size: 16;
+                    font-weight: 500;
+                  `}>
                   {info.item.title}
                 </Text>
                 <View
-                  style={{
-                    marginLeft: 'auto',
-                  }}>
+                  style={css`
+                    margin-left: auto;
+                  `}>
                   <Text
-                    style={{
-                      fontSize: 18,
-                      fontWeight: 'bold',
-                      color: colors.white.base,
-                    }}>
+                    style={css`
+                      font-size: 18;
+                      font-weight: bold;
+                      color: ${colors.white.base};
+                    `}>
                     →
                   </Text>
                 </View>
