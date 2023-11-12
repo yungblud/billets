@@ -2,8 +2,8 @@ import colors from '@app/lib/colors';
 import {memo} from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {SvgProps} from 'react-native-svg';
-import styled from 'styled-components/native';
 import React from 'react';
+import styled from '@emotion/native';
 
 const useBottomTabBarIconFillColor = ({isFocused}: {isFocused: boolean}) => {
   const focusedColor = '#ffffff';

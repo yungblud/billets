@@ -1,12 +1,12 @@
 import type {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import React, {memo, useMemo} from 'react';
-import styled from 'styled-components/native';
 import {navigations} from '@app/lib/constants';
 import SearchIcon from '@app/components/icons/SearchIcon';
 import HomeIcon from '@app/components/icons/HomeIcon';
 import GenieIcon from '@app/components/icons/GenieIcon';
 import BottomTabBarItem from './BottomTabBarItem';
 import colors from '@app/lib/colors';
+import styled from '@emotion/native';
 
 const switchTitle = (route: string) => {
   switch (route) {

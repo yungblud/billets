@@ -1,9 +1,9 @@
 import React from 'react';
 import {FlatList, Text, TouchableOpacity, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import styled from 'styled-components/native';
 import colors from '../../lib/colors';
 import {useSettingScreenNavigation} from './hooks';
+import styled from '@emotion/native';
 
 interface SettingScreenProps {}
 
